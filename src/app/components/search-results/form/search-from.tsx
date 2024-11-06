@@ -51,9 +51,8 @@ const HolidaySearchForm = () => {
 
     const searchParams = new URLSearchParams({
       bookingType: "holiday",
-      direct: "false",
       location: destination.toLowerCase(),
-      departureDate: DateTime.fromJSDate(dates.start).toFormat("yyyy-MM-dd"),
+      departureDate: DateTime.fromJSDate(dates.start).toFormat("dd-MM-yyyy"),
       duration: duration.toString(),
       gateway: departureAirport,
       partyCompositions: `a${party.adults}${party.childAges

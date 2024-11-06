@@ -21,7 +21,7 @@ export default function Home() {
         {
           adults: 2,
           childAges: [],
-          infants: 0,
+          infants: 2,
         },
       ],
     },
@@ -46,6 +46,32 @@ export default function Home() {
 
   return (
     <main className={`wrapper`}>
+      {/* <ul className={styles.list}>
+        {samples?.map((sample: BookingRequest, idx: number) => {
+          return (
+            <li key={idx} className={styles.listItem}>
+              <Link
+                href={`/results?bookingType=${sample?.bookingType}&location=${
+                  sample?.location
+                }&gateway=${sample?.gateway}&departureDate=${
+                  sample?.departureDate
+                }&duration=${sample?.duration}${sample?.partyCompositions
+                  ?.map(
+                    (party: PartyComposition, i: number) =>
+                      `&partyCompositions=a${party?.adults}`
+                  )
+                  .join("&")}`}
+              >
+                {`
+                    ${sample?.location} from ${sample?.gateway} (${
+                  sample?.duration
+                } nights, ${Rooms.prettyFormat(sample?.partyCompositions)}) 
+                  `}
+              </Link>
+            </li>
+          );
+        })}
+      </ul> */}
       <HolidaySearchForm />
     </main>
   );
