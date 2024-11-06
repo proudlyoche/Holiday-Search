@@ -1,18 +1,19 @@
-import type { Metadata } from 'next'
-import Image from 'next/image'
+import type { Metadata } from "next";
+import Image from "next/image";
 
-import './globals.css'
-import Link from 'next/link'
+import "./globals.css";
+import Link from "next/link";
+import { ReactQueryClientProvider } from "./ClientProvider";
 
 export const metadata: Metadata = {
-  title: 'Virgin Atlantic | Front End Coding Test',
-  description: 'Created by Virgin Atlantic Digital Team',
-}
+  title: "Virgin Atlantic | Front End Coding Test",
+  description: "Created by Virgin Atlantic Digital Team",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -30,8 +31,8 @@ export default function RootLayout({
             </Link>
           </div>
         </header>
-        {children}
+        <ReactQueryClientProvider>{children}</ReactQueryClientProvider>
       </body>
     </html>
-  )
+  );
 }
