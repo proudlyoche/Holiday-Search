@@ -1,5 +1,7 @@
 import { BookingResponse } from "@/types/booking";
 import { Rooms } from "@/utils/composition.service";
+import HolidayCard from "../card/holiday-card";
+import FilterPanel from "../card/side-panel-card";
 
 async function getData(params: {
   [key: string]: string | string[] | undefined;
@@ -45,6 +47,15 @@ export default async function SearchResultsComponent({
   return (
     <section>
       <h2>{results?.holidays?.length} results found</h2>
+
+      <FilterPanel />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {results?.holidays.map((holiday) => (
+          <HolidayCard key={holiday.hotel.id} holiday={holiday} />
+        ))}
+      </div>
+
       <p>Please fill out the filters and results list below&hellip;</p>
     </section>
   );

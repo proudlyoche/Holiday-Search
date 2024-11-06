@@ -3415,6 +3415,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lucide-react@npm:^0.454.0":
+  version: 0.454.0
+  resolution: "lucide-react@npm:0.454.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+  checksum: 6f4dc004d84730fd7b246d531a4b801e850ba81e390bd1ac3bd66a4e02ee6dd81e023acf789eb8aec5c030c53915d058badda174d6095664610fe41ba1310208
+  languageName: node
+  linkType: hard
+
 "luxon@npm:^3.4.4":
   version: 3.5.0
   resolution: "luxon@npm:3.5.0"
@@ -3754,6 +3763,7 @@ __metadata:
     cypress: ^13.6.3
     eslint: ^8
     eslint-config-next: 14.0.4
+    lucide-react: ^0.454.0
     luxon: ^3.4.4
     next: 14.0.4
     parsimmon: ^1.18.1
