@@ -1,7 +1,9 @@
 import { BookingResponse } from "@/types/booking";
 import { Rooms } from "@/utils/composition.service";
 
-async function getData(params: { [key: string]: string | string[] | undefined }) {
+async function getData(params: {
+  [key: string]: string | string[] | undefined;
+}) {
   const body = {
     bookingType: params.bookingType,
     direct: false,
@@ -9,7 +11,9 @@ async function getData(params: { [key: string]: string | string[] | undefined })
     departureDate: params.departureDate,
     duration: params.duration,
     gateway: params.gateway,
-    partyCompositions: Rooms.parseAndConvert([params.partyCompositions as string]),
+    partyCompositions: Rooms.parseAndConvert([
+      params.partyCompositions as string,
+    ]),
   };
 
   const res = await fetch(
