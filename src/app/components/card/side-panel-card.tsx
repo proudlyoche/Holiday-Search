@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { Filters } from "@/types/booking";
 
-const FACILITIES = [
+export const FACILITIES = [
   {
     id: "Restaurant",
     label: "Restaurant",
@@ -161,6 +161,7 @@ const FilterPanel = memo(
           <label className="block mb-2 font-medium">Price Range</label>
           <div className="flex items-center gap-4">
             <input
+              data-cy="price-slider"
               type="range"
               min={minPrice}
               max={maxPrice}
@@ -170,7 +171,7 @@ const FilterPanel = memo(
               onTouchEnd={handlePriceChangeComplete}
               className="w-full"
             />
-            <span>£{localPrice}</span>
+            <span data-cy="price-display">£{localPrice}</span>
           </div>
         </div>
 
@@ -184,6 +185,7 @@ const FilterPanel = memo(
               >
                 <input
                   type="checkbox"
+                  data-cy={`facility-${facility.id}`}
                   checked={filters.facilities.includes(facility.id)}
                   onChange={(e) =>
                     handleFacilityChange(facility.id, e.target.checked)
@@ -203,6 +205,7 @@ const FilterPanel = memo(
             {[5, 4, 3, 2, 1].map((rating) => (
               <button
                 key={rating}
+                data-cy={`star-rating-${rating}`}
                 onClick={() => handleStarRatingChange(rating)}
                 className={`p-2 rounded transition-colors ${
                   filters.starRating === rating
